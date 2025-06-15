@@ -1,0 +1,23 @@
+{
+  "name": "rtc-agent-test",
+  "version": "1.0.0",
+  "description": "Simple Volcano Engine RTC Web Demo",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "npm run server & npm run serve",
+    "serve": "python3 -m http.server 8080",
+    "server": "cd server && node app.js",
+    "build": "echo 'Static files ready for deployment'",
+    "test": "echo 'No tests yet'"
+  },
+  "keywords": ["rtc", "volcano-engine", "webrtc", "video-call"],
+  "author": "xc",
+  "license": "MIT",
+  "dependencies": {
+    "@volcengine/rtc": "^4.66.15"
+  },
+  "devDependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

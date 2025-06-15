@@ -14,6 +14,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Serve static files from src directory
+app.use(express.static(require('path').join(__dirname, '../src')));
+
 // Configuration from environment
 const CONFIG = {
     RTC: {

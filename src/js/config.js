@@ -1,29 +1,34 @@
 // Configuration for RTC Agent Test Demo
 const CONFIG = {
-    // Volcano Engine RTC Configuration
+    // Jitsi Meet Configuration
     RTC: {
-        // TODO: Replace with your actual AppId from Volcano Engine Console
-        appId: 'YOUR_RTC_APP_ID',
-        
-        // Server configuration
-        serverUrl: 'wss://rtc-ws-sg.volcengineapi.com',
+        // Jitsi Meet server (can be self-hosted)
+        domain: 'meet.jit.si',
         
         // Default room settings
         defaultRoomId: 'demo-room',
         
-        // Video configuration
-        video: {
-            width: 1280,
-            height: 720,
-            frameRate: 30,
-            bitrate: 1000
-        },
-        
-        // Audio configuration
-        audio: {
-            sampleRate: 48000,
-            channels: 2,
-            bitrate: 128
+        // Jitsi configuration options
+        options: {
+            width: '100%',
+            height: '100%',
+            parentNode: undefined, // Will be set dynamically
+            roomName: 'demo-room',
+            configOverwrite: {
+                prejoinPageEnabled: false,
+                startWithAudioMuted: false,
+                startWithVideoMuted: false
+            },
+            interfaceConfigOverwrite: {
+                TOOLBAR_BUTTONS: [
+                    'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
+                    'fodeviceselection', 'hangup', 'profile', 'chat', 'recording',
+                    'livestreaming', 'etherpad', 'sharedvideo', 'settings', 'raisehand',
+                    'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts'
+                ],
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_WATERMARK_FOR_GUESTS: false
+            }
         }
     },
     
